@@ -4,6 +4,7 @@ Advanced Network Architecture Project in GNS3
 ## Table of Contents
 - [Objective](#objective)
 - [What's included](#whats-included)
+- [IPv4 network topology](#ipv4-network-topology)
 - [Documentation](#documentation)
 - [Improvements](#improvements)
 - [Tools](#tools)
@@ -23,9 +24,15 @@ ARA_project_IPv4/
         +-- ISP-ES/
         +-- ISP-PT1/
         +-- ISP-PT2/
-    +-- project-files/	
+    +-- project-files/
     +-- ARA_project_IPv4.gns3 (main file)
 ```
+
+## IPv4 network topology
+
+![ipv4_network_topology_image]
+
+[ipv4_network_topology_image]: https://github.com/Diogo525/ARA-Project/blob/master/images/IPv4_network.png
 
 ## Documentation
 
