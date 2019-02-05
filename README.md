@@ -24,6 +24,14 @@ ARA_project_IPv4/
         +-- ISP-ES/
         +-- ISP-PT1/
         +-- ISP-PT2/
+            +-- Aveiro/
+                +-- netA1/
+                +-- netB1/
+            +-- Oeiras/
+                +-- netC/
+                +-- netD/
+                    +-- netA2/
+                    +-- netB2/
     +-- project-files/
     +-- ARA_project_IPv4.gns3 (main file)
 ```
@@ -50,7 +58,7 @@ The project lacks the following features (which will be implemented in future up
 
 The software **GNS3 v2.1.11** was used for the network simulation.
 
-- Router firmware image used: **Router 7200 Firmware 15.1(4) Image**
+- Router firmware image: **Router 7200 Firmware 15.1(4) Image**
 
 ## Testing
 
