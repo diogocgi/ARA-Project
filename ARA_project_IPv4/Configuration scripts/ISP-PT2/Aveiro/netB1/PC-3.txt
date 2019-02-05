@@ -1,0 +1,19 @@
+!!!!!! no routing capabilities !!!!!!
+
+conf t
+no ip routing 
+ip default-gateway 111.1.1.1
+int f0/0
+ip add 111.1.1.10 255.255.255.128
+no shut
+end
+wr
+
+
+!!!!!! Configure DNS server - CDN server !!!!!!
+conf t
+ip name-server 10.2.64.10
+ip domain lookup
+end
+wr
+

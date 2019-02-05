@@ -1,0 +1,179 @@
+Jan 30 04:21:44.597 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 04:21:44.598 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 64428.
+Jan 30 04:21:45.072 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 04:21:45.073 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips 
+Jan 30 04:21:45.073 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips
+Jan 30 04:21:45.073 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\4532c187-24e1-4483-9569-f5b9e4623d95 
+Jan 30 04:21:45.074 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\4532c187-24e1-4483-9569-f5b9e4623d95
+Jan 30 04:21:45.074 HYPERVISOR: exec_cmd: vm create EmpA2 11 c7200 
+Jan 30 04:21:45.078 VM: VM EmpA2 created.
+Jan 30 04:21:45.078 HYPERVISOR: exec_cmd: vm set_con_tcp_port EmpA2 5070 
+Jan 30 04:21:45.078 HYPERVISOR: exec_cmd: c7200 get_mac_addr EmpA2 
+Jan 30 04:21:45.078 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:21:45.079 HYPERVISOR: exec_cmd: vm slot_add_binding EmpA2 0 0 C7200-IO-FE 
+Jan 30 04:21:45.079 HYPERVISOR: exec_cmd: vm set_disk0 EmpA2 0 
+Jan 30 04:21:45.079 HYPERVISOR: exec_cmd: vm set_exec_area EmpA2 64 
+Jan 30 04:21:45.080 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:21:45.080 HYPERVISOR: exec_cmd: vm set_idle_pc EmpA2 0x60608040 
+Jan 30 04:21:45.081 HYPERVISOR: exec_cmd: vm set_ios EmpA2 C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:21:45.081 HYPERVISOR: exec_cmd: c7200 set_mac_addr EmpA2 ca0b.41c4.0000 
+Jan 30 04:21:45.081 HYPERVISOR: exec_cmd: vm set_nvram EmpA2 512 
+Jan 30 04:21:45.082 HYPERVISOR: exec_cmd: vm set_ram EmpA2 512 
+Jan 30 04:21:45.082 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:21:45.082 HYPERVISOR: exec_cmd: vm slot_remove_binding EmpA2 0 0 
+Jan 30 04:21:45.083 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:21:45.083 HYPERVISOR: exec_cmd: vm slot_add_binding EmpA2 0 0 C7200-IO-2FE 
+Jan 30 04:21:45.083 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:21:45.083 HYPERVISOR: exec_cmd: vm slot_add_binding EmpA2 1 0 PA-2FE-TX 
+Jan 30 04:22:00.464 HYPERVISOR: exec_cmd: nio create_udp udp-14569ba1-11d0-4ed7-a700-ce2a0451c183 10096 127.0.0.1 10097 
+Jan 30 04:22:01.005 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EmpA2 0 0 udp-14569ba1-11d0-4ed7-a700-ce2a0451c183 
+Jan 30 04:22:01.005 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:22:03.886 HYPERVISOR: exec_cmd: nio create_udp udp-3aa13be9-0660-4de7-84b7-22bb392b9083 10120 127.0.0.1 10121 
+Jan 30 04:22:03.894 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EmpA2 0 1 udp-3aa13be9-0660-4de7-84b7-22bb392b9083 
+Jan 30 04:22:03.894 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:46:23.901 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 04:46:23.905 VM: VM Ghost created.
+Jan 30 04:46:23.905 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:46:23.906 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 04:46:23.906 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 04:46:23.907 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 04:46:23.907 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 04:46:23.908 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 04:46:23.908 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 04:46:36.911 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 04:46:39.434 VM: VM Ghost shutdown.
+Jan 30 04:46:39.434 VM: VM Ghost destroyed.
+Jan 30 04:46:39.470 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:46:39.474 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 04:46:39.474 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 04:47:10.251 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 04:47:40.257 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 04:53:42.942 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:53:42.942 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 04:53:43.104 VM: VM EmpA2 shutdown.
+Jan 30 04:53:43.105 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 04:54:13.553 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 04:54:13.557 VM: VM Ghost created.
+Jan 30 04:54:13.558 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:54:13.558 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 04:54:13.559 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 04:54:13.559 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 04:54:13.560 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 04:54:13.560 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 04:54:13.561 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 04:54:27.156 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 04:54:36.492 VM: VM Ghost shutdown.
+Jan 30 04:54:36.492 VM: VM Ghost destroyed.
+Jan 30 04:54:36.521 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 04:54:36.525 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 04:54:36.525 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 05:06:14.515 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:06:14.515 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 05:06:14.700 VM: VM EmpA2 shutdown.
+Jan 30 05:06:14.702 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 05:06:42.482 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:06:42.486 VM: VM Ghost created.
+Jan 30 05:06:42.486 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:06:42.487 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:06:42.487 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:06:42.487 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:06:42.488 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:06:42.489 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:06:42.489 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:06:49.823 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:07:00.043 VM: VM Ghost shutdown.
+Jan 30 05:07:00.043 VM: VM Ghost destroyed.
+Jan 30 05:07:00.053 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:07:00.057 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 05:07:00.057 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 05:11:28.648 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:11:28.649 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 05:11:28.834 VM: VM EmpA2 shutdown.
+Jan 30 05:11:28.835 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 05:12:23.628 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:12:23.633 VM: VM Ghost created.
+Jan 30 05:12:23.633 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:12:23.634 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:12:23.634 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:12:23.634 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:12:23.635 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:12:23.636 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:12:23.636 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:12:23.684 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:12:34.306 VM: VM Ghost shutdown.
+Jan 30 05:12:34.306 VM: VM Ghost destroyed.
+Jan 30 05:12:34.316 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:12:34.319 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 05:12:34.319 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 05:28:40.801 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:28:40.802 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 05:28:40.981 VM: VM EmpA2 shutdown.
+Jan 30 05:28:40.982 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 05:30:58.496 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:30:58.500 VM: VM Ghost created.
+Jan 30 05:30:58.501 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:30:58.501 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:30:58.502 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:30:58.502 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:30:58.502 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:30:58.503 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:30:58.503 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:31:10.689 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:31:23.014 VM: VM Ghost shutdown.
+Jan 30 05:31:23.014 VM: VM Ghost destroyed.
+Jan 30 05:31:23.024 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:31:23.027 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 05:31:23.028 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 05:58:33.398 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:58:33.398 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 05:58:33.578 VM: VM EmpA2 shutdown.
+Jan 30 05:58:33.579 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 05:58:46.507 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:58:46.511 VM: VM Ghost created.
+Jan 30 05:58:46.512 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:58:46.512 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:58:46.513 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:58:46.513 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:58:46.514 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:58:46.515 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:58:46.515 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:58:57.219 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:59:03.335 VM: VM Ghost shutdown.
+Jan 30 05:59:03.335 VM: VM Ghost destroyed.
+Jan 30 05:59:03.345 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 05:59:03.349 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 05:59:03.350 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 06:47:11.110 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 06:47:11.110 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 06:47:11.281 VM: VM EmpA2 shutdown.
+Jan 30 06:47:11.283 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 06:47:16.342 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 06:47:16.346 VM: VM Ghost created.
+Jan 30 06:47:16.346 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 06:47:16.347 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 06:47:16.347 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 06:47:16.347 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 06:47:16.348 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 06:47:16.349 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 06:47:16.349 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 06:47:26.592 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 06:47:36.696 VM: VM Ghost shutdown.
+Jan 30 06:47:36.696 VM: VM Ghost destroyed.
+Jan 30 06:47:36.706 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 06:47:36.710 HYPERVISOR: exec_cmd: vm set_config EmpA2 configs\i11_startup-config.cfg configs\i11_private-config.cfg 
+Jan 30 06:47:36.710 HYPERVISOR: exec_cmd: vm start EmpA2 
+Jan 30 06:57:11.487 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 06:57:11.501 HYPERVISOR: exec_cmd: vm set_idle_pc_online EmpA2 0 0x601712a8 
+Jan 30 07:12:54.653 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 07:12:54.653 HYPERVISOR: exec_cmd: vm stop EmpA2 
+Jan 30 07:12:54.831 VM: VM EmpA2 shutdown.
+Jan 30 07:12:54.832 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 07:13:03.702 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 07:13:03.705 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 07:13:04.068 HYPERVISOR: exec_cmd: vm get_status EmpA2 
+Jan 30 07:13:04.079 HYPERVISOR: exec_cmd: vm extract_config EmpA2 
+Jan 30 07:13:04.087 HYPERVISOR: exec_cmd: vm delete EmpA2 
+Jan 30 07:13:04.087 VM: VM EmpA2 destroyed.
+Jan 30 07:13:04.090 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 07:13:04.525 HYPERVISOR: Stopped.
+Jan 30 07:13:04.525 GENERAL: reset done.

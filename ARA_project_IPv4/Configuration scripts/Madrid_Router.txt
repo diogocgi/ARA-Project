@@ -1,0 +1,108 @@
+!!!!!! IPv4 configuration of the interfaces !!!!!!
+
+conf t
+!!! f0/0 - NetM2 !!!
+int f0/0
+ip add 190.200.1.1 255.255.255.0
+no shut
+
+!!! f0/1 - NetM1 !!!
+int f0/1
+ip add 190.100.1.1 255.255.255.0
+no shut
+
+!!! f1/0 - Madrid <-> Lisboa1 !!!
+int f1/0
+ip add 5.4.4.13 255.255.255.252
+no shut
+
+!!! f1/1 - Madrid <-> Porto !!!
+int f1/1
+ip add 5.4.4.5 255.255.255.252
+no shut
+
+!!! f2/0 - Madrid <-> Lisboa2 !!!
+int f2/0
+ip add 5.4.4.1 255.255.255.252
+no shut
+
+!!! f2/1 - Internet Core !!!
+int f2/1
+ip add 2.2.2.1 255.255.255.0
+no shut
+
+end
+write
+
+!!!!!! Basic BGP !!!!!!
+
+conf t
+
+!! AS 20000
+router bgp 20000
+!! declare neighbors with whom we want to exchange normal IPv4 unicast routes
+address-family ipv4 unicast
+!! neighbor relationship with Porto BGP router in AS 1000
+neighbor 5.4.4.6 remote-as 1000
+!! neighbor relationship with Lisboa2 BGP router in AS 1000
+neighbor 5.4.4.2 remote-as 1000
+!! neighbor relationship with Lisboa1 BGP router in AS 40000
+neighbor 5.4.4.14 remote-as 40000
+!! local networks inside AS 20000 and add them to BGP routing table
+network 190.100.1.0 mask 255.255.255.0
+network 190.200.1.0 mask 255.255.255.0
+network 2.2.2.0 mask 255.255.255.0
+
+!!!!!! OSPF !!!!!!
+
+conf t
+router ospf 1
+!!netM2
+int f0/0
+ip ospf 1 area 0
+!!netM1
+int f0/1
+ip ospf 1 area 0
+!! for internet core
+int f2/1
+no ip ospf 1 area 0
+end
+wr
+
+!!! Resdistribute ospf routes to add to bgp table 
+conf t
+router bgp 20000
+address-family ipv4 unicast
+redistribute ospf 1
+end
+wr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

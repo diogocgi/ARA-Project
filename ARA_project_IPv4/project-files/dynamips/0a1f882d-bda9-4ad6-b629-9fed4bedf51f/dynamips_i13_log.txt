@@ -1,0 +1,16 @@
+Jan 30 04:21:40.868 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 04:21:40.869 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 64404.
+Jan 30 04:21:41.351 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 04:21:41.352 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips 
+Jan 30 04:21:41.352 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips
+Jan 30 04:21:41.352 HYPERVISOR: exec_cmd: ethsw create netC 
+Jan 30 04:22:02.993 HYPERVISOR: exec_cmd: nio create_udp udp-2a3f585c-8c15-40cf-90da-e1e8754625b4 10107 127.0.0.1 10106 
+Jan 30 04:22:02.994 HYPERVISOR: exec_cmd: ethsw add_nio netC udp-2a3f585c-8c15-40cf-90da-e1e8754625b4 
+Jan 30 04:22:03.009 HYPERVISOR: exec_cmd: ethsw set_access_port netC udp-2a3f585c-8c15-40cf-90da-e1e8754625b4 1 
+Jan 30 04:22:07.695 HYPERVISOR: exec_cmd: nio create_udp udp-fc3529dc-8ad2-4aec-b503-c39067ba2225 10157 127.0.0.1 10156 
+Jan 30 04:22:07.695 HYPERVISOR: exec_cmd: ethsw add_nio netC udp-fc3529dc-8ad2-4aec-b503-c39067ba2225 
+Jan 30 04:22:07.702 HYPERVISOR: exec_cmd: ethsw set_access_port netC udp-fc3529dc-8ad2-4aec-b503-c39067ba2225 1 
+Jan 30 07:13:03.779 HYPERVISOR: exec_cmd: ethsw delete netC 
+Jan 30 07:13:03.816 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 07:13:04.166 HYPERVISOR: Stopped.
+Jan 30 07:13:04.166 GENERAL: reset done.

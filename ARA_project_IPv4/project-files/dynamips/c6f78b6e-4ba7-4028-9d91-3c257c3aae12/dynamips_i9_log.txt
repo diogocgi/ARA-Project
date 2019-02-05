@@ -1,0 +1,188 @@
+Jan 30 04:21:38.697 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 04:21:38.698 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 64390.
+Jan 30 04:21:39.176 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 04:21:39.177 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips 
+Jan 30 04:21:39.177 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips
+Jan 30 04:21:39.177 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\549cf022-0fb6-4a48-8f15-f623f3449132 
+Jan 30 04:21:39.178 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\549cf022-0fb6-4a48-8f15-f623f3449132
+Jan 30 04:21:39.178 HYPERVISOR: exec_cmd: vm create Aveiro 5 c7200 
+Jan 30 04:21:39.182 VM: VM Aveiro created.
+Jan 30 04:21:39.182 HYPERVISOR: exec_cmd: vm set_con_tcp_port Aveiro 5058 
+Jan 30 04:21:39.182 HYPERVISOR: exec_cmd: c7200 get_mac_addr Aveiro 
+Jan 30 04:21:39.183 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:39.183 HYPERVISOR: exec_cmd: vm slot_add_binding Aveiro 0 0 C7200-IO-FE 
+Jan 30 04:21:39.183 HYPERVISOR: exec_cmd: vm set_disk0 Aveiro 0 
+Jan 30 04:21:39.184 HYPERVISOR: exec_cmd: vm set_exec_area Aveiro 64 
+Jan 30 04:21:39.184 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:39.184 HYPERVISOR: exec_cmd: vm set_idle_pc Aveiro 0x60608040 
+Jan 30 04:21:39.185 HYPERVISOR: exec_cmd: vm set_ios Aveiro C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:21:39.186 HYPERVISOR: exec_cmd: c7200 set_mac_addr Aveiro ca05.272c.0000 
+Jan 30 04:21:39.186 HYPERVISOR: exec_cmd: vm set_nvram Aveiro 512 
+Jan 30 04:21:39.186 HYPERVISOR: exec_cmd: vm set_ram Aveiro 512 
+Jan 30 04:21:39.187 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:39.187 HYPERVISOR: exec_cmd: vm slot_remove_binding Aveiro 0 0 
+Jan 30 04:21:39.187 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:39.188 HYPERVISOR: exec_cmd: vm slot_add_binding Aveiro 0 0 C7200-IO-2FE 
+Jan 30 04:21:39.188 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:39.188 HYPERVISOR: exec_cmd: vm slot_add_binding Aveiro 1 0 PA-2FE-TX 
+Jan 30 04:21:39.189 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:39.189 HYPERVISOR: exec_cmd: vm slot_add_binding Aveiro 2 0 PA-2FE-TX 
+Jan 30 04:21:56.768 HYPERVISOR: exec_cmd: nio create_udp udp-763326ec-0df0-4a33-89d0-93098d610f95 10060 127.0.0.1 10061 
+Jan 30 04:21:57.317 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Aveiro 0 0 udp-763326ec-0df0-4a33-89d0-93098d610f95 
+Jan 30 04:21:57.317 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:57.446 HYPERVISOR: exec_cmd: nio create_udp udp-7ca5ee26-f330-4759-8798-6dc84aa8a4c0 10064 127.0.0.1 10065 
+Jan 30 04:21:57.449 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Aveiro 0 1 udp-7ca5ee26-f330-4759-8798-6dc84aa8a4c0 
+Jan 30 04:21:57.449 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:21:58.093 HYPERVISOR: exec_cmd: nio create_udp udp-0fa27370-dd77-43f3-9531-24a307e86b29 10070 127.0.0.1 10071 
+Jan 30 04:21:58.095 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Aveiro 1 0 udp-0fa27370-dd77-43f3-9531-24a307e86b29 
+Jan 30 04:21:58.096 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:22:04.921 HYPERVISOR: exec_cmd: nio create_udp udp-c6b18ebc-ce2c-43f6-9701-1473a6d6c041 10136 127.0.0.1 10137 
+Jan 30 04:22:04.924 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Aveiro 1 1 udp-c6b18ebc-ce2c-43f6-9701-1473a6d6c041 
+Jan 30 04:22:04.924 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:46:16.099 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 04:46:16.103 VM: VM Ghost created.
+Jan 30 04:46:16.112 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:46:16.113 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 04:46:16.114 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 04:46:16.114 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 04:46:16.115 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 04:46:16.116 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 04:46:16.116 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 04:46:16.136 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 04:46:16.376 VM: VM Ghost shutdown.
+Jan 30 04:46:16.376 VM: VM Ghost destroyed.
+Jan 30 04:46:16.383 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:46:16.386 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 04:46:16.386 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 04:46:46.848 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 04:47:16.846 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 04:53:42.546 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:53:42.546 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 04:53:42.764 VM: VM Aveiro shutdown.
+Jan 30 04:53:42.765 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 04:54:11.673 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 04:54:11.677 VM: VM Ghost created.
+Jan 30 04:54:11.678 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:54:11.678 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 04:54:11.679 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 04:54:11.679 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 04:54:11.679 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 04:54:11.717 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 04:54:11.717 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 04:54:11.740 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 04:54:11.978 VM: VM Ghost shutdown.
+Jan 30 04:54:11.978 VM: VM Ghost destroyed.
+Jan 30 04:54:11.985 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 04:54:11.987 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 04:54:11.987 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 05:06:14.099 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:06:14.100 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 05:06:14.316 VM: VM Aveiro shutdown.
+Jan 30 05:06:14.317 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 05:06:40.838 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:06:40.843 VM: VM Ghost created.
+Jan 30 05:06:40.845 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:06:40.846 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:06:40.846 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:06:40.847 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:06:40.847 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:06:40.848 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:06:40.848 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:06:40.865 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:06:41.102 VM: VM Ghost shutdown.
+Jan 30 05:06:41.102 VM: VM Ghost destroyed.
+Jan 30 05:06:41.110 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:06:41.113 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 05:06:41.113 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 05:11:28.214 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:11:28.215 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 05:11:28.451 VM: VM Aveiro shutdown.
+Jan 30 05:11:28.452 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 05:12:21.906 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:12:21.910 VM: VM Ghost created.
+Jan 30 05:12:21.923 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:12:21.924 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:12:21.925 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:12:21.926 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:12:21.926 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:12:21.927 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:12:21.928 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:12:21.974 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:12:22.210 VM: VM Ghost shutdown.
+Jan 30 05:12:22.210 VM: VM Ghost destroyed.
+Jan 30 05:12:22.218 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:12:22.221 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 05:12:22.222 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 05:28:40.246 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:28:40.246 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 05:28:40.460 VM: VM Aveiro shutdown.
+Jan 30 05:28:40.462 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 05:30:56.677 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:30:56.680 VM: VM Ghost created.
+Jan 30 05:30:56.699 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:30:56.699 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:30:56.700 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:30:56.700 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:30:56.701 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:30:56.701 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:30:56.702 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:30:56.717 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:30:56.966 VM: VM Ghost shutdown.
+Jan 30 05:30:56.966 VM: VM Ghost destroyed.
+Jan 30 05:30:56.973 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:30:57.004 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 05:30:57.005 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 05:58:32.966 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:58:32.966 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 05:58:33.197 VM: VM Aveiro shutdown.
+Jan 30 05:58:33.199 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 05:58:38.330 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:58:38.333 VM: VM Ghost created.
+Jan 30 05:58:38.342 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:58:38.342 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:58:38.343 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:58:38.343 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:58:38.344 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:58:38.345 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:58:38.345 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:58:38.367 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:58:38.610 VM: VM Ghost shutdown.
+Jan 30 05:58:38.610 VM: VM Ghost destroyed.
+Jan 30 05:58:38.622 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 05:58:38.631 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 05:58:38.632 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 06:32:39.130 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 06:47:10.660 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 06:47:10.662 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 06:47:10.921 VM: VM Aveiro shutdown.
+Jan 30 06:47:10.922 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 06:47:14.544 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 06:47:14.549 VM: VM Ghost created.
+Jan 30 06:47:14.549 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 06:47:14.550 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 06:47:14.550 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 06:47:14.551 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 06:47:14.551 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 06:47:14.553 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 06:47:14.554 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 06:47:14.576 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 06:47:14.837 VM: VM Ghost shutdown.
+Jan 30 06:47:14.837 VM: VM Ghost destroyed.
+Jan 30 06:47:14.845 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 06:47:14.848 HYPERVISOR: exec_cmd: vm set_config Aveiro configs\i5_startup-config.cfg configs\i5_private-config.cfg 
+Jan 30 06:47:14.848 HYPERVISOR: exec_cmd: vm start Aveiro 
+Jan 30 06:57:10.779 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 06:57:10.790 HYPERVISOR: exec_cmd: vm set_idle_pc_online Aveiro 0 0x601712a8 
+Jan 30 07:12:54.218 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 07:12:54.219 HYPERVISOR: exec_cmd: vm stop Aveiro 
+Jan 30 07:12:54.444 VM: VM Aveiro shutdown.
+Jan 30 07:12:54.445 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 07:13:03.663 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 07:13:03.664 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 07:13:04.060 HYPERVISOR: exec_cmd: vm get_status Aveiro 
+Jan 30 07:13:04.066 HYPERVISOR: exec_cmd: vm extract_config Aveiro 
+Jan 30 07:13:04.072 HYPERVISOR: exec_cmd: vm delete Aveiro 
+Jan 30 07:13:04.072 VM: VM Aveiro destroyed.
+Jan 30 07:13:04.083 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 07:13:04.559 HYPERVISOR: Stopped.
+Jan 30 07:13:04.559 GENERAL: reset done.

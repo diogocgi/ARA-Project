@@ -1,0 +1,25 @@
+Static ip address -> file /etc/network/interfaces
+
+| ...
+| auto eth1
+| iface eth1 inet static
+| address 10.2.64.10
+| netmask 255.255.192.0
+| gateway 10.2.64.1
+|
+
+
+After setting up the files in /etc/bind/
+
+aracdn.com-aveiro.db
+aracdn.com-lisboa.db
+aracdn.com-oeiras.db
+named.conf.local
+
+Execute command:
+named-checkzone aracdn.com aracdn.com-aveiro.db
+named-checkzone aracdn.com aracdn.com-lisboa.db
+named-checkzone aracdn.com aracdn.com-oeiras.db
+service bind9 restart
+
+

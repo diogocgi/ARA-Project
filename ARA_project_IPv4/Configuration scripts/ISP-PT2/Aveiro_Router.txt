@@ -1,0 +1,152 @@
+!!!!!! IPv4 configuration of the interfaces !!!!!!
+
+conf t
+
+!!! f0/0 - Ethernet Core !!!
+int f0/0
+ip add 10.0.0.3 255.255.128.0
+no shut
+
+!!! f0/1 - Aveiro <-> EmpB1 !!!
+int f0/1
+ip add 10.0.128.5 255.255.255.252
+no shut
+
+!!! f1/0 - Aveiro <-> EmpA1 !!!
+int f1/0
+ip add 10.0.128.1 255.255.255.252
+no shut
+
+!!! f1/1 - Datacenter Aveiro !!!
+int f1/1
+ip add 10.2.64.1 255.255.192.0
+no shut
+
+end
+write
+
+!!!!!! loopback interface !!!!!!
+
+conf t
+interface loopback 0
+ip address 192.168.2.2 255.255.255.255
+end 
+wr
+
+!!!!!! OSPF !!!!!!
+
+conf t
+router ospf 1
+
+!! isp network core
+int f0/0 
+ip ospf 1 area 0
+
+!! Emp B has ospf process 3
+int f0/1
+ip ospf 3 area 0
+
+!! Emp A has ospf process 2
+int f1/0
+ip ospf 2 area 0
+
+!! Datacenter Aveiro has ospf process 1
+int f1/1
+ip ospf 1 area 0
+
+int loopback 0
+ip ospf 1 area 0
+end
+wr
+
+!!!!!! iBGP !!!!!!
+
+conf t 
+
+!! AS 1000
+router bgp 1000
+!! declare neighbors with whom we want to exchange normal IPv4 unicast routes
+address-family ipv4 unicast
+!! neighbor relationship with Porto BGP router in AS 1000
+neighbor 192.168.2.6 remote-as 1000
+neighbor 192.168.2.6 next-hop-self
+neighbor 192.168.2.6 update-source loopback 0
+!! neighbor relationship with Lisboa2 BGP router in AS 1000
+neighbor 192.168.2.3 remote-as 1000
+neighbor 192.168.2.3 next-hop-self
+neighbor 192.168.2.3 update-source loopback 0
+!! neighbor relationship with Oeiras BGP router in AS 1000
+neighbor 192.168.2.4 remote-as 1000
+neighbor 192.168.2.4 next-hop-self
+neighbor 192.168.2.4 update-source loopback 0
+!! local networks inside AS 1000 and add them to BGP routing table (connected to EmpA1 and EmpB1)
+network 10.0.128.0 mask 255.255.255.252
+network 10.0.128.4 mask 255.255.255.252
+!! loopback
+network 192.168.2.2 mask 255.255.255.255
+
+end
+wr
+
+!!! Resdistribute ospf routes to add to bgp table the routes to the networks 110.1.1.0/24 
+!!!	and 111.1.1.0/24 
+conf t
+router bgp 1000
+address-family ipv4 unicast
+redistribute ospf 2
+redistribute ospf 3
+end
+wr
+
+!!!!!! Give priority to the iBGP routes instead of OSPF routes !!!!!!
+conf t
+router ospf 2
+distance 210
+router ospf 3
+distance 210
+end
+wr
+
+
+b1) IP traffic towards all AS20000 networks, should be preferably routed via Porto from Aveiro, 
+
+conf t
+
+ip prefix-list as20000-destination seq 10 permit 190.100.1.0/24
+ip prefix-list as20000-destination seq 20 permit 190.200.1.0/24
+
+!! Route-map to send traffic through porto
+route-map route-through-porto permit 10
+match ip address prefix-list as20000-destination
+!! default local preference is 100, so a bigger number needs to be specified
+set local-preference 110
+route-map route-through-porto permit 20
+
+conf t
+!! Update neighbor relationships with the route-map 
+router bgp 1000
+address-family ipv4 unicast
+neighbor 192.168.2.6 route-map route-through-porto in
+end
+wr
+
+!!!!! MPLS !!!!!
+
+conf t
+mpls traffic-eng tunnels 
+
+!! Enable traffic engineering features on OSPF
+router ospf 1
+mpls traffic-eng area 0
+mpls traffic-eng router-id Loopback 0
+exit
+
+!! Enable RSVP by entering in each physical interface 
+in f0/0
+mpls traffic-eng tunnels
+!!  bandwidth on the interface that can be booked by MPLS TE tunnels: 100 Mbps = 100000kbps
+ip rsvp bandwidth 100000 100000
+end
+wr
+
+

@@ -1,0 +1,192 @@
+Jan 30 04:21:39.241 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 04:21:39.242 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 64393.
+Jan 30 04:21:39.722 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 04:21:39.723 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips 
+Jan 30 04:21:39.723 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips
+Jan 30 04:21:39.723 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\1267bd21-01c6-4b7f-95f2-cb7d82833e14 
+Jan 30 04:21:39.724 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\1267bd21-01c6-4b7f-95f2-cb7d82833e14
+Jan 30 04:21:39.724 HYPERVISOR: exec_cmd: vm create Oeiras 6 c7200 
+Jan 30 04:21:39.727 VM: VM Oeiras created.
+Jan 30 04:21:39.728 HYPERVISOR: exec_cmd: vm set_con_tcp_port Oeiras 5059 
+Jan 30 04:21:39.728 HYPERVISOR: exec_cmd: c7200 get_mac_addr Oeiras 
+Jan 30 04:21:39.728 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:39.729 HYPERVISOR: exec_cmd: vm slot_add_binding Oeiras 0 0 C7200-IO-FE 
+Jan 30 04:21:39.729 HYPERVISOR: exec_cmd: vm set_disk0 Oeiras 0 
+Jan 30 04:21:39.729 HYPERVISOR: exec_cmd: vm set_exec_area Oeiras 64 
+Jan 30 04:21:39.730 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:39.730 HYPERVISOR: exec_cmd: vm set_idle_pc Oeiras 0x60608040 
+Jan 30 04:21:39.731 HYPERVISOR: exec_cmd: vm set_ios Oeiras C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:21:39.731 HYPERVISOR: exec_cmd: c7200 set_mac_addr Oeiras ca06.05dc.0000 
+Jan 30 04:21:39.732 HYPERVISOR: exec_cmd: vm set_nvram Oeiras 512 
+Jan 30 04:21:39.732 HYPERVISOR: exec_cmd: vm set_ram Oeiras 512 
+Jan 30 04:21:39.732 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:39.733 HYPERVISOR: exec_cmd: vm slot_remove_binding Oeiras 0 0 
+Jan 30 04:21:39.733 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:39.733 HYPERVISOR: exec_cmd: vm slot_add_binding Oeiras 0 0 C7200-IO-2FE 
+Jan 30 04:21:39.733 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:39.734 HYPERVISOR: exec_cmd: vm slot_add_binding Oeiras 1 0 PA-2FE-TX 
+Jan 30 04:21:39.734 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:39.734 HYPERVISOR: exec_cmd: vm slot_add_binding Oeiras 2 0 PA-2FE-TX 
+Jan 30 04:21:56.019 HYPERVISOR: exec_cmd: nio create_udp udp-905fc999-e2bb-47f4-bc25-f9b694e79567 10052 127.0.0.1 10053 
+Jan 30 04:21:56.567 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Oeiras 0 0 udp-905fc999-e2bb-47f4-bc25-f9b694e79567 
+Jan 30 04:21:56.568 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:21:56.660 HYPERVISOR: exec_cmd: nio create_udp udp-1a7d7a76-864e-47c0-ae0e-a144fd78ea2c 10056 127.0.0.1 10057 
+Jan 30 04:21:56.662 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Oeiras 1 0 udp-1a7d7a76-864e-47c0-ae0e-a144fd78ea2c 
+Jan 30 04:21:56.662 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:22:04.808 HYPERVISOR: exec_cmd: nio create_udp udp-0755220b-83bd-4aeb-9684-8936acf3ab3a 10132 127.0.0.1 10133 
+Jan 30 04:22:04.811 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Oeiras 1 1 udp-0755220b-83bd-4aeb-9684-8936acf3ab3a 
+Jan 30 04:22:04.811 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:22:07.020 HYPERVISOR: exec_cmd: nio create_udp udp-6f1a0e82-a4fd-4672-8062-404d31bd4309 10152 127.0.0.1 10153 
+Jan 30 04:22:07.024 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Oeiras 0 1 udp-6f1a0e82-a4fd-4672-8062-404d31bd4309 
+Jan 30 04:22:07.024 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:46:16.385 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 04:46:16.389 VM: VM Ghost created.
+Jan 30 04:46:16.389 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:46:16.390 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 04:46:16.390 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 04:46:16.390 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 04:46:16.391 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 04:46:16.392 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 04:46:16.392 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 04:46:16.407 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 04:46:16.651 VM: VM Ghost shutdown.
+Jan 30 04:46:16.651 VM: VM Ghost destroyed.
+Jan 30 04:46:16.658 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:46:16.693 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 04:46:16.694 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 04:46:47.177 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 04:47:17.160 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 04:53:42.546 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:53:42.547 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 04:53:42.752 VM: VM Oeiras shutdown.
+Jan 30 04:53:42.754 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 04:54:11.986 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 04:54:11.990 VM: VM Ghost created.
+Jan 30 04:54:11.990 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 04:54:11.991 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 04:54:11.992 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 04:54:11.992 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 04:54:11.993 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 04:54:11.993 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 04:54:11.994 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 04:54:12.008 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 04:54:12.258 VM: VM Ghost shutdown.
+Jan 30 04:54:12.258 VM: VM Ghost destroyed.
+Jan 30 04:54:12.266 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 04:54:12.269 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 04:54:12.270 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 05:06:12.827 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:06:14.100 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:06:14.100 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 05:06:14.340 VM: VM Oeiras shutdown.
+Jan 30 05:06:14.341 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:06:41.112 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:06:41.115 VM: VM Ghost created.
+Jan 30 05:06:41.116 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:06:41.116 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:06:41.116 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:06:41.117 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:06:41.117 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:06:41.118 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:06:41.118 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:06:41.131 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:06:41.368 VM: VM Ghost shutdown.
+Jan 30 05:06:41.368 VM: VM Ghost destroyed.
+Jan 30 05:06:41.376 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:06:41.379 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 05:06:41.380 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 05:11:28.238 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:11:28.239 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 05:11:28.501 VM: VM Oeiras shutdown.
+Jan 30 05:11:28.502 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:12:22.220 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:12:22.224 VM: VM Ghost created.
+Jan 30 05:12:22.225 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:12:22.225 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:12:22.226 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:12:22.226 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:12:22.227 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:12:22.228 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:12:22.228 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:12:22.244 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:12:22.477 VM: VM Ghost shutdown.
+Jan 30 05:12:22.477 VM: VM Ghost destroyed.
+Jan 30 05:12:22.485 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:12:22.488 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 05:12:22.488 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 05:20:53.148 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:24:53.172 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:28:40.261 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:28:40.261 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 05:28:40.494 VM: VM Oeiras shutdown.
+Jan 30 05:28:40.496 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:30:56.976 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:30:56.980 VM: VM Ghost created.
+Jan 30 05:30:57.004 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:30:57.005 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:30:57.005 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:30:57.006 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:30:57.006 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:30:57.007 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:30:57.007 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:30:57.024 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:30:57.265 VM: VM Ghost shutdown.
+Jan 30 05:30:57.265 VM: VM Ghost destroyed.
+Jan 30 05:30:57.272 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:30:57.276 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 05:30:57.276 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 05:52:27.828 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:58:32.981 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:58:32.982 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 05:58:33.221 VM: VM Oeiras shutdown.
+Jan 30 05:58:33.222 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 05:58:38.625 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 05:58:38.630 VM: VM Ghost created.
+Jan 30 05:58:38.632 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 05:58:38.632 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 05:58:38.633 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 05:58:38.633 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 05:58:38.634 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 05:58:38.635 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 05:58:38.635 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 05:58:38.650 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 05:58:38.892 VM: VM Ghost shutdown.
+Jan 30 05:58:38.892 VM: VM Ghost destroyed.
+Jan 30 05:58:38.901 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 05:58:38.904 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 05:58:38.904 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 06:33:09.447 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 06:47:10.662 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 06:47:10.662 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 06:47:10.965 VM: VM Oeiras shutdown.
+Jan 30 06:47:10.966 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 06:47:14.847 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 06:47:14.851 VM: VM Ghost created.
+Jan 30 06:47:14.852 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 06:47:14.852 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 06:47:14.853 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 06:47:14.853 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 06:47:14.853 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 06:47:14.854 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 06:47:14.854 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 06:47:14.869 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 06:47:15.121 VM: VM Ghost shutdown.
+Jan 30 06:47:15.121 VM: VM Ghost destroyed.
+Jan 30 06:47:15.132 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 06:47:15.158 HYPERVISOR: exec_cmd: vm set_config Oeiras configs\i6_startup-config.cfg configs\i6_private-config.cfg 
+Jan 30 06:47:15.159 HYPERVISOR: exec_cmd: vm start Oeiras 
+Jan 30 06:57:10.787 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 06:57:10.791 HYPERVISOR: exec_cmd: vm set_idle_pc_online Oeiras 0 0x601712a8 
+Jan 30 07:12:54.261 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 07:12:54.262 HYPERVISOR: exec_cmd: vm stop Oeiras 
+Jan 30 07:12:54.528 VM: VM Oeiras shutdown.
+Jan 30 07:12:54.529 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 07:13:03.663 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 07:13:03.665 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 07:13:04.180 HYPERVISOR: exec_cmd: vm get_status Oeiras 
+Jan 30 07:13:04.181 HYPERVISOR: exec_cmd: vm extract_config Oeiras 
+Jan 30 07:13:04.187 HYPERVISOR: exec_cmd: vm delete Oeiras 
+Jan 30 07:13:04.187 VM: VM Oeiras destroyed.
+Jan 30 07:13:04.194 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 07:13:04.559 HYPERVISOR: Stopped.
+Jan 30 07:13:04.559 GENERAL: reset done.

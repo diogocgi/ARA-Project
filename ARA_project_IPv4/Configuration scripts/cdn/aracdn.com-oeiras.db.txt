@@ -1,0 +1,11 @@
+$TTL 604800
+$ORIGIN aracdn.com.
+@	IN	SOA	nsl.aracdn.com.	adm.aracdn.com. (
+			      2			; Serial
+			   604800		; Refresh
+			   86400		; Retry
+			   2419200		;Expire
+			   604800 )		; Negative Cache TTL
+	IN 	NS	nsl.aracdn.com.
+	IN	A	10.2.0.2
+nsl	IN 	A	10.2.64.10

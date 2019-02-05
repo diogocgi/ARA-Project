@@ -1,0 +1,29 @@
+Feb 05 15:20:13.216 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 05 15:20:13.222 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 53956.
+Feb 05 15:20:13.675 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 05 15:20:13.676 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips 
+Feb 05 15:20:13.676 GENERAL: working_dir=D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips
+Feb 05 15:20:13.676 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips\56515d5b-bb25-4ada-8d82-e14d67302361 
+Feb 05 15:20:13.676 GENERAL: working_dir=D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips\56515d5b-bb25-4ada-8d82-e14d67302361
+Feb 05 15:20:13.695 HYPERVISOR: exec_cmd: vm create Porto 4 c7200 
+Feb 05 15:20:13.713 VM: VM Porto created.
+Feb 05 15:20:13.713 HYPERVISOR: exec_cmd: vm set_con_tcp_port Porto 5053 
+Feb 05 15:20:13.719 HYPERVISOR: exec_cmd: c7200 get_mac_addr Porto 
+Feb 05 15:20:13.720 HYPERVISOR: exec_cmd: vm get_status Porto 
+Feb 05 15:20:13.721 HYPERVISOR: exec_cmd: vm slot_add_binding Porto 0 0 C7200-IO-FE 
+Feb 05 15:20:13.722 HYPERVISOR: exec_cmd: vm set_disk0 Porto 0 
+Feb 05 15:20:13.723 HYPERVISOR: exec_cmd: vm set_exec_area Porto 64 
+Feb 05 15:20:13.724 HYPERVISOR: exec_cmd: vm get_status Porto 
+Feb 05 15:20:13.726 HYPERVISOR: exec_cmd: vm set_idle_pc Porto 0x601712a8 
+Feb 05 15:20:13.727 HYPERVISOR: exec_cmd: vm set_ios Porto C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Feb 05 15:20:13.727 HYPERVISOR: exec_cmd: c7200 set_mac_addr Porto ca04.3cf8.0000 
+Feb 05 15:20:13.731 HYPERVISOR: exec_cmd: vm set_nvram Porto 512 
+Feb 05 15:20:13.732 HYPERVISOR: exec_cmd: vm set_ram Porto 512 
+Feb 05 15:20:13.733 HYPERVISOR: exec_cmd: vm get_status Porto 
+Feb 05 15:20:13.734 HYPERVISOR: exec_cmd: vm slot_remove_binding Porto 0 0 
+Feb 05 15:20:13.735 HYPERVISOR: exec_cmd: vm get_status Porto 
+Feb 05 15:20:13.736 HYPERVISOR: exec_cmd: vm slot_add_binding Porto 0 0 C7200-IO-2FE 
+Feb 05 15:20:13.737 HYPERVISOR: exec_cmd: vm get_status Porto 
+Feb 05 15:20:13.738 HYPERVISOR: exec_cmd: vm slot_add_binding Porto 1 0 PA-2FE-TX 
+Feb 05 15:20:13.739 HYPERVISOR: exec_cmd: vm get_status Porto 
+Feb 05 15:20:13.740 HYPERVISOR: exec_cmd: vm slot_add_binding Porto 2 0 PA-2FE-TX 

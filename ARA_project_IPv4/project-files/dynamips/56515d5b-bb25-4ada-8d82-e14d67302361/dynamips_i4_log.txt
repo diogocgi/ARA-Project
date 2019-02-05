@@ -1,0 +1,6 @@
+Feb 05 15:20:13.829 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 05 15:20:13.830 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 53959.
+Feb 05 15:20:14.306 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 05 15:20:14.307 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips 
+Feb 05 15:20:14.308 GENERAL: working_dir=D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips
+Feb 05 15:20:14.308 HYPERVISOR: exec_cmd: ethsw create InternetCore 

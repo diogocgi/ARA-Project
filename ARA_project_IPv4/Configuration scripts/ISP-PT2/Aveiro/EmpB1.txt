@@ -1,0 +1,45 @@
+!!!!!! IPv4 configuration of the interfaces !!!!!!
+
+conf t
+
+!!! f0/0 - EmpB1 <-> Aveiro !!!
+int f0/0
+ip add 10.0.128.6 255.255.255.252
+no shut
+
+!!! f0/1 - netB1 !!!
+int f0/1
+ip add 111.1.1.1 255.255.255.128
+no shut
+
+end
+write
+
+!! default route Send all packets destined for networks not in my routing table to 10.0.128.1
+conf t
+ip route 0.0.0.0 0.0.0.0 10.0.128.5
+
+!!!!!! loopback interface !!!!!!
+
+conf t
+interface loopback 0
+ip address 192.168.2.1 255.255.255.255
+end 
+wr
+
+!!!!!! OSPF !!!!!!
+conf t
+!! process id
+router ospf 3
+
+!! ospf 1 area 0 for each interface
+conf t
+int f0/0
+ip ospf 3 area 0
+int f0/1
+ip ospf 3 area 0
+int loopback 0
+ip ospf 3 area 0
+end
+wr
+

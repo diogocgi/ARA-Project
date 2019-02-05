@@ -1,0 +1,29 @@
+Feb 05 15:20:12.168 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 05 15:20:12.170 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 53921.
+Feb 05 15:20:12.260 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 05 15:20:12.261 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips 
+Feb 05 15:20:12.464 GENERAL: working_dir=D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips
+Feb 05 15:20:12.467 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips\ab843a67-6ee6-4163-9bc7-5962d6b6f71d 
+Feb 05 15:20:12.468 GENERAL: working_dir=D:\diogo\Desktop\Projeto_Recurso\project-files\dynamips\ab843a67-6ee6-4163-9bc7-5962d6b6f71d
+Feb 05 15:20:12.469 HYPERVISOR: exec_cmd: vm create Madrid 1 c7200 
+Feb 05 15:20:12.470 VM: VM Madrid created.
+Feb 05 15:20:12.470 HYPERVISOR: exec_cmd: vm set_con_tcp_port Madrid 5050 
+Feb 05 15:20:12.478 HYPERVISOR: exec_cmd: c7200 get_mac_addr Madrid 
+Feb 05 15:20:12.478 HYPERVISOR: exec_cmd: vm get_status Madrid 
+Feb 05 15:20:12.479 HYPERVISOR: exec_cmd: vm slot_add_binding Madrid 0 0 C7200-IO-FE 
+Feb 05 15:20:12.479 HYPERVISOR: exec_cmd: vm set_disk0 Madrid 0 
+Feb 05 15:20:12.480 HYPERVISOR: exec_cmd: vm set_exec_area Madrid 64 
+Feb 05 15:20:12.481 HYPERVISOR: exec_cmd: vm get_status Madrid 
+Feb 05 15:20:12.482 HYPERVISOR: exec_cmd: vm set_idle_pc Madrid 0x601712a8 
+Feb 05 15:20:12.482 HYPERVISOR: exec_cmd: vm set_ios Madrid C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Feb 05 15:20:12.484 HYPERVISOR: exec_cmd: c7200 set_mac_addr Madrid ca01.1104.0000 
+Feb 05 15:20:12.485 HYPERVISOR: exec_cmd: vm set_nvram Madrid 512 
+Feb 05 15:20:12.485 HYPERVISOR: exec_cmd: vm set_ram Madrid 512 
+Feb 05 15:20:12.487 HYPERVISOR: exec_cmd: vm get_status Madrid 
+Feb 05 15:20:12.488 HYPERVISOR: exec_cmd: vm slot_remove_binding Madrid 0 0 
+Feb 05 15:20:12.488 HYPERVISOR: exec_cmd: vm get_status Madrid 
+Feb 05 15:20:12.489 HYPERVISOR: exec_cmd: vm slot_add_binding Madrid 0 0 C7200-IO-2FE 
+Feb 05 15:20:12.489 HYPERVISOR: exec_cmd: vm get_status Madrid 
+Feb 05 15:20:12.490 HYPERVISOR: exec_cmd: vm slot_add_binding Madrid 1 0 PA-2FE-TX 
+Feb 05 15:20:12.490 HYPERVISOR: exec_cmd: vm get_status Madrid 
+Feb 05 15:20:12.491 HYPERVISOR: exec_cmd: vm slot_add_binding Madrid 2 0 PA-2FE-TX 

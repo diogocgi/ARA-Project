@@ -1,0 +1,79 @@
+!!!!!! IPv4 configuration of the interfaces !!!!!!
+
+conf t
+
+!!! f0/0 - netL1 !!!
+int f0/0
+ip add 65.0.1.1 255.255.255.0
+no shut
+
+!!! f0/1 - Madrid <-> Lisboa1 !!!
+int f0/1
+ip add 5.4.4.14 255.255.255.252
+no shut
+
+!!! f1/0 - Lisboa1 <-> Lisboa2 !!!
+int f1/0
+ip add 5.4.4.9 255.255.255.252
+no shut
+
+!!! f1/1 - Internet Core !!!
+int f1/1
+ip add 2.2.2.2 255.255.255.0
+no shut
+
+!!!!!! loopback interface !!!!!!
+conf t
+interface loopback 0
+ip address 192.168.2.10 255.255.255.255
+end 
+wr
+
+end
+write
+
+!!!!!! Basic BGP !!!!!!
+
+conf t
+
+!! AS 40000
+router bgp 40000
+!! declare neighbors with whom we want to exchange normal IPv4 unicast routes
+address-family ipv4 unicast
+!! neighbor relationship with Madrid BGP router in AS 20000
+neighbor 5.4.4.13 remote-as 20000
+!! neighbor relationship with Lisboa2 BGP router in AS 1000
+neighbor 5.4.4.10 remote-as 1000
+!! local networks inside AS 40000 and add them to BGP routing table
+network 65.0.1.0 mask 255.255.255.0
+network 2.2.2.0 mask 255.255.255.0
+network 192.168.2.10 mask 255.255.255.255
+end 
+
+!!!!!! OSPF !!!!!!
+
+conf t
+router ospf 1
+!! for netL1
+int f0/0
+ip ospf 1 area 0
+!! for internet core
+int f1/1
+no ip ospf 1 area 0
+!! lo0
+int loopback0
+ip ospf 1 area 0
+end
+wr
+
+!!! Resdistribute ospf routes to add to bgp table 
+conf t
+router bgp 40000
+address-family ipv4 unicast
+no redistribute ospf 1
+end
+wr
+
+
+
+

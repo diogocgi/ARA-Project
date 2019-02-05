@@ -1,0 +1,60 @@
+Jan 30 23:15:59.919 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 23:15:59.920 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 54157.
+Jan 30 23:16:00.379 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 23:16:00.380 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips 
+Jan 30 23:16:00.380 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips
+Jan 30 23:16:00.381 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\18fe69a3-f563-4f08-ae13-f3b0c6c83d71 
+Jan 30 23:16:00.382 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\18fe69a3-f563-4f08-ae13-f3b0c6c83d71
+Jan 30 23:16:00.382 HYPERVISOR: exec_cmd: vm create PC-5 14 c7200 
+Jan 30 23:16:00.386 VM: VM PC-5 created.
+Jan 30 23:16:00.386 HYPERVISOR: exec_cmd: vm set_con_tcp_port PC-5 5074 
+Jan 30 23:16:00.387 HYPERVISOR: exec_cmd: c7200 get_mac_addr PC-5 
+Jan 30 23:16:00.387 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:16:00.387 HYPERVISOR: exec_cmd: vm slot_add_binding PC-5 0 0 C7200-IO-FE 
+Jan 30 23:16:00.388 HYPERVISOR: exec_cmd: vm set_disk0 PC-5 0 
+Jan 30 23:16:00.388 HYPERVISOR: exec_cmd: vm set_exec_area PC-5 64 
+Jan 30 23:16:00.389 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:16:00.389 HYPERVISOR: exec_cmd: vm set_idle_pc PC-5 0x601712a8 
+Jan 30 23:16:00.390 HYPERVISOR: exec_cmd: vm set_ios PC-5 C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 23:16:00.390 HYPERVISOR: exec_cmd: c7200 set_mac_addr PC-5 ca0e.028c.0000 
+Jan 30 23:16:00.391 HYPERVISOR: exec_cmd: vm set_nvram PC-5 512 
+Jan 30 23:16:00.391 HYPERVISOR: exec_cmd: vm set_ram PC-5 512 
+Jan 30 23:16:00.392 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:16:00.392 HYPERVISOR: exec_cmd: vm slot_remove_binding PC-5 0 0 
+Jan 30 23:16:00.392 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:16:00.393 HYPERVISOR: exec_cmd: vm slot_add_binding PC-5 0 0 C7200-IO-2FE 
+Jan 30 23:16:00.393 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:16:00.393 HYPERVISOR: exec_cmd: vm slot_add_binding PC-5 1 0 PA-2FE-TX 
+Jan 30 23:16:18.900 HYPERVISOR: exec_cmd: nio create_udp udp-785d5026-41d9-4e42-ab50-e3e458a4c703 10088 127.0.0.1 10089 
+Jan 30 23:16:19.454 HYPERVISOR: exec_cmd: vm slot_add_nio_binding PC-5 0 0 udp-785d5026-41d9-4e42-ab50-e3e458a4c703 
+Jan 30 23:16:19.455 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:17:20.087 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 30 23:17:20.092 VM: VM Ghost created.
+Jan 30 23:17:20.093 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/diogo_v23/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 30 23:17:20.093 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 30 23:17:20.094 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 30 23:17:20.094 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 30 23:17:20.094 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 30 23:17:20.095 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 30 23:17:20.096 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 30 23:17:20.133 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 30 23:17:20.185 VM: VM Ghost shutdown.
+Jan 30 23:17:20.185 VM: VM Ghost destroyed.
+Jan 30 23:17:20.196 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 30 23:17:20.198 HYPERVISOR: exec_cmd: vm set_config PC-5 configs\i14_startup-config.cfg configs\i14_private-config.cfg 
+Jan 30 23:17:20.200 HYPERVISOR: exec_cmd: vm start PC-5 
+Jan 30 23:17:50.712 HYPERVISOR: exec_cmd: vm extract_config PC-5 
+Jan 30 23:18:20.688 HYPERVISOR: exec_cmd: vm extract_config PC-5 
+Jan 31 01:20:48.981 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 31 01:20:48.982 HYPERVISOR: exec_cmd: vm stop PC-5 
+Jan 31 01:20:49.134 VM: VM PC-5 shutdown.
+Jan 31 01:20:49.135 HYPERVISOR: exec_cmd: vm extract_config PC-5 
+Jan 31 01:23:44.774 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 31 01:23:44.777 HYPERVISOR: exec_cmd: vm extract_config PC-5 
+Jan 31 01:23:45.716 HYPERVISOR: exec_cmd: vm get_status PC-5 
+Jan 31 01:23:45.726 HYPERVISOR: exec_cmd: vm extract_config PC-5 
+Jan 31 01:23:45.732 HYPERVISOR: exec_cmd: vm delete PC-5 
+Jan 31 01:23:45.732 VM: VM PC-5 destroyed.
+Jan 31 01:23:45.737 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 31 01:23:46.233 HYPERVISOR: Stopped.
+Jan 31 01:23:46.233 GENERAL: reset done.

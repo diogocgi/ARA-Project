@@ -1,0 +1,169 @@
+!!!!!! IPv4 configuration of the interfaces !!!!!!
+
+conf t
+
+!!! f0/0 - Madrid <-> Porto !!!
+int f0/0
+ip add 5.4.4.6 255.255.255.252
+no shut
+
+!!! f1/1 - Ethernet Core !!!
+int f1/1
+ip add 10.0.0.2 255.255.128.0
+no shut
+
+end
+write
+
+!!!!!! loopback interface !!!!!!
+conf t
+interface loopback 0
+ip address 192.168.2.6 255.255.255.255
+end 
+wr
+
+!!!!!! OSPF !!!!!!
+
+conf t
+router ospf 1
+
+int f1/1
+ip ospf 1 area 0
+!!Exemplo: R1 and R2 must have reachability to the addresses they intend to form the peering sessions over. In you example, you are attempting to form an eBGP peering session over the loopback. So ensure that both R1 and R2 have reachability to each others loopback addresses via a dynamic routing protocol or static routing.
+int loopback 0
+ip ospf 1 area 0
+end
+wr
+
+
+!!!!!! Basic BGP, iBGP with loopback addresses !!!!!!
+
+conf t
+
+!! AS 1000
+router bgp 1000
+!! declare neighbors with whom we want to exchange normal IPv4 unicast routes
+address-family ipv4 unicast
+!! neighbor relationship with Madrid BGP router in AS 20000
+neighbor 5.4.4.5 remote-as 20000
+!! neighbor relationship with Lisboa2 BGP router in AS 1000
+neighbor 192.168.2.3 remote-as 1000
+neighbor 192.168.2.3 update-source loopback 0
+!! neighbor relationship with Aveiro BGP router in AS 1000
+neighbor 192.168.2.2 remote-as 1000
+neighbor 192.168.2.2 update-source loopback 0
+!! neighbor relationship with Oeiras BGP router in AS 1000
+neighbor 192.168.2.4 remote-as 1000
+neighbor 192.168.2.4 update-source loopback 0
+!! loopback
+network 192.168.2.6 mask 255.255.255.255
+!! remove private AS number from AS-path in all updates 
+!! "all" to remove private AS number from as-path when there are public and private as numbers in the path
+neighbor 5.4.4.5 remove-private-as all
+end
+wr
+
+!!! correct the next-hop ip address of the bgp routes to the EmpA1 and EmpA2 networks 
+!!!	that are being advertised to router Madrid 
+conf t
+
+!! AS 1000
+router bgp 1000
+!! declare neighbors with whom we want to exchange normal IPv4 unicast routes
+address-family ipv4 unicast
+!! correct next-hop address of bgp routes advertised from aveiro to Madrid router
+neighbor 5.4.4.5 next-hop-self
+!! correct next-hop address of bgp routes advertised from madrid to Aveiro router
+neighbor 192.168.2.2 next-hop-self
+neighbor 192.168.2.3 next-hop-self
+end
+wr
+
+!!! c) IP traffic for remote SIP proxy 2 (to network netL1) must be routed via Porto using the direct peering
+link to ISP ES. Policy based routing
+
+conf t
+ip access-list extended 101
+permit ip 112.1.1.0 0.0.0.255 65.0.1.0 0.0.0.255
+
+conf t
+route-map SIP2-to-netL1-through-Porto permit 10
+match ip address 101
+set ip next-hop 5.4.4.5
+route-map SIP2-to-netL1-through-Porto permit 20
+
+!! apply route-map to interface where the packets from the SIP proxy 2 network are received
+conf t
+int f1/1
+ip policy route-map SIP2-to-netL1-through-Porto
+
+!!!!! MPLS !!!!!
+
+conf t
+mpls traffic-eng tunnels 
+
+!! Enable traffic engineering features on OSPF
+router ospf 1
+mpls traffic-eng area 0
+mpls traffic-eng router-id Loopback 0
+exit
+
+!! Enable RSVP by entering in each physical interface 
+in f1/1
+mpls traffic-eng tunnels
+!!  bandwidth on the interface that can be booked by MPLS TE tunnels: 100 Mbps = 100000kbps
+ip rsvp bandwidth 100000 100000
+end
+wr
+
+!!! static MPLS tunnels between Lisboa2 and Porto
+
+conf t
+int tunnel 1
+ip unnumbered Loopback0
+tunnel destination 192.168.2.3
+tunnel mode mpls traffic-eng
+tunnel mpls traffic-eng bandwidth 30000 	! 30Mbps
+tunnel mpls traffic-eng path-option 1 explicit name path1
+
+!! configure explicit path for tunnel 1
+conf t
+ip explicit-path name path1 enable
+next-address 10.0.0.1
+end
+
+
+!! routes to netL1 (from external ASs) go through tunnel1
+
+conf t
+!! netL1 to netM1
+ip access-list extended 103
+permit ip 190.100.1.0 0.0.0.255 65.0.1.0 0.0.0.255
+!! netL1 to netM2
+ip access-list extended 104
+permit ip 190.200.1.0 0.0.0.255 65.0.1.0 0.0.0.255
+
+conf t
+route-map external-AS-through-tunnel1 permit 10
+match ip address 103
+set default interface Tunnel1
+
+route-map external-AS-through-tunnel1 permit 20
+match ip address 104
+set default interface Tunnel1
+
+route-map external-AS-through-tunnel1 permit 30
+
+!! apply route map to interface that connects to external AS
+conf t
+int f0/0
+ip policy route-map external-AS-through-tunnel1
+
+
+
+
+
+
+
+
+

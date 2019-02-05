@@ -1,0 +1,87 @@
+!!!!!! IPv4 configuration of the interfaces !!!!!!
+
+conf t
+
+!!! f0/0 - Oeiras <-> EmpC !!!
+int f0/0
+ip add 10.0.128.14 255.255.255.252
+no shut
+
+!!! f0/1 - netC !!!
+int f0/1
+ip add 112.1.1.1 255.255.255.0
+no shut
+
+end
+write
+
+!!!!!! loopback interface !!!!!!
+
+conf t
+interface loopback 0
+ip address 192.168.2.9 255.255.255.255
+end 
+wr
+
+!! default route Send all packets destined for networks not in my routing table to 10.0.128.13
+conf t
+ip route 0.0.0.0 0.0.0.0 10.0.128.13
+
+!!!!!! OSPF !!!!!!
+
+conf t
+router ospf 1
+
+int f0/1
+ip ospf 1 area 0
+int loopback 0
+ip ospf 1 area 0
+
+!!!!!! iBGP with loopback addresses !!!!!!
+
+conf t 
+
+!! AS 65400
+router bgp 65400
+!! declare neighbors with whom we want to exchange normal IPv4 unicast routes
+address-family ipv4 unicast
+!! neighbor relationship with Oeiras router in AS 1000
+no neighbor 192.168.2.4 remote-as 1000
+no neighbor 192.168.2.4 update-source loopback 0
+neighbor 10.0.128.13 remote-as 1000
+!! local networks inside AS 65400 and add them to BGP routing table
+network 112.1.1.0 mask 255.255.255.0
+!! loopback
+network 192.168.2.9 mask 255.255.255.255
+end
+wr
+
+!!! redistribute ospf process routes to bgp
+conf t
+!! AS 1000
+router bgp 65400
+address-family ipv4 unicast
+redistribute ospf 1
+end 
+wr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

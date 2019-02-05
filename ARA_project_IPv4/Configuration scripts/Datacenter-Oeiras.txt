@@ -1,0 +1,17 @@
+!!!!!! no routing capabilities !!!!!!
+
+conf t
+no ip routing 
+ip default-gateway 10.2.0.1
+ip name-server 10.2.64.10	!! CdnServer/ dns
+ip domain lookup
+int f0/0
+ip add 10.2.0.2 255.255.192.0
+no shut
+end
+wr
+
+
+
+
+

@@ -1,0 +1,5 @@
+/etc/bind/named.conf
+Comentar a linha:
+
+
+include "/etc/bind/named.conf.default-zones";

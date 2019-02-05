@@ -1,0 +1,24 @@
+Jan 30 04:21:36.589 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 30 04:21:36.591 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 64376.
+Jan 30 04:21:37.066 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 30 04:21:37.067 HYPERVISOR: exec_cmd: hypervisor working_dir D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips 
+Jan 30 04:21:37.067 GENERAL: working_dir=D:\diogo\Desktop\FinalRound\ARA\practical_project_preparation\Projeto_Recurso\project-files\dynamips
+Jan 30 04:21:37.067 HYPERVISOR: exec_cmd: ethsw create InternetCore 
+Jan 30 04:21:55.577 HYPERVISOR: exec_cmd: nio create_udp udp-ba7cb8f2-0a80-43f7-a6a2-3254c3c25fa0 10033 127.0.0.1 10032 
+Jan 30 04:21:55.578 HYPERVISOR: exec_cmd: ethsw add_nio InternetCore udp-ba7cb8f2-0a80-43f7-a6a2-3254c3c25fa0 
+Jan 30 04:21:55.588 HYPERVISOR: exec_cmd: ethsw set_access_port InternetCore udp-ba7cb8f2-0a80-43f7-a6a2-3254c3c25fa0 1 
+Jan 30 04:21:55.686 HYPERVISOR: exec_cmd: nio create_udp udp-c709b597-2382-4cf2-82a4-6b6e6298bff3 10037 127.0.0.1 10036 
+Jan 30 04:21:55.687 HYPERVISOR: exec_cmd: ethsw add_nio InternetCore udp-c709b597-2382-4cf2-82a4-6b6e6298bff3 
+Jan 30 04:21:55.693 HYPERVISOR: exec_cmd: ethsw set_access_port InternetCore udp-c709b597-2382-4cf2-82a4-6b6e6298bff3 1 
+Jan 30 04:22:06.920 HYPERVISOR: exec_cmd: nio create_udp udp-ef528f0f-d44b-4b54-8a1e-d0c751dffe00 10147 127.0.0.1 10146 
+Jan 30 04:22:06.921 HYPERVISOR: exec_cmd: ethsw add_nio InternetCore udp-ef528f0f-d44b-4b54-8a1e-d0c751dffe00 
+Jan 30 04:22:06.922 HYPERVISOR: exec_cmd: ethsw set_access_port InternetCore udp-ef528f0f-d44b-4b54-8a1e-d0c751dffe00 1 
+Jan 30 06:56:00.911 HYPERVISOR: exec_cmd: ethsw remove_nio InternetCore udp-c709b597-2382-4cf2-82a4-6b6e6298bff3 
+Jan 30 06:56:00.928 HYPERVISOR: exec_cmd: nio delete udp-c709b597-2382-4cf2-82a4-6b6e6298bff3 
+Jan 30 06:57:23.265 HYPERVISOR: exec_cmd: nio create_udp udp-2cd000c7-4089-4c7b-ae13-8c72a180d61e 10005 127.0.0.1 10004 
+Jan 30 06:57:23.265 HYPERVISOR: exec_cmd: ethsw add_nio InternetCore udp-2cd000c7-4089-4c7b-ae13-8c72a180d61e 
+Jan 30 06:57:23.272 HYPERVISOR: exec_cmd: ethsw set_access_port InternetCore udp-2cd000c7-4089-4c7b-ae13-8c72a180d61e 1 
+Jan 30 07:13:03.784 HYPERVISOR: exec_cmd: ethsw delete InternetCore 
+Jan 30 07:13:03.837 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 30 07:13:04.166 HYPERVISOR: Stopped.
+Jan 30 07:13:04.166 GENERAL: reset done.
