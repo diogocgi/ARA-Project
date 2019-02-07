@@ -62,7 +62,7 @@ The software **GNS3 v2.1.11** was used for the network simulation.
 
 ## Testing
 
-To upload the project in a working state, all VMs used were removed (being replaced by blank squares). In order to test functionalities like the CDN, DNS and SIP, the blank squares must be replaced by VMs and configured according to the [wiki](https://github.com/Diogo525/ARA-Project/wiki).
+To upload the project in a working state, all VMs used were removed (being replaced by blank squares). In order to test functionalities like the CDN, DNS and SIP, the blank squares must be replaced by VMs and configured according to the [wiki](https://github.com/Diogo525/ARA-Project/wiki/IPv4-Network-Configuration#CDN-configuration).
 
 ## Creators
 
