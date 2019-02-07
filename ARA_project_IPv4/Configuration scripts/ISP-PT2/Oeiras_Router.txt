@@ -22,7 +22,7 @@ int f1/0.2
 encapsulation dot1Q 2
 ip address 192.168.1.249 255.255.255.252
 
-!! sub-interface for EmpB2, vlan 1
+!! sub-interface for EmpB2, vlan 3
 int f1/0.3
 encapsulation dot1Q 3
 ip address 192.168.1.253 255.255.255.252
